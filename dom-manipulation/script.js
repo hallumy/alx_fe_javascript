@@ -10,14 +10,14 @@ const newQuoteCategoryInput = document.getElementById("newQuoteCategory");
 // Function to show a random quote from any category
 function showRandomQuote() {
   if (quotes.length === 0) {
-    quoteDisplay.textContent = "No quotes available.";
+    quoteDisplay.innerHTML = "<em>No quotes available.</em>";
     return;
   }
 
   const randomIndex = Math.floor(Math.random() * quotes.length);
   const randomQuote = quotes[randomIndex];
 
-  quoteDisplay.textContent = `"${randomQuote.text}" — ${randomQuote.category}`;
+  quoteDisplay.innerHTML = `<blockquote>"${randomQuote.text}"</blockquote><p><strong>— ${randomQuote.category}</strong></p>`;
 }
 
 // Function to add a new quote
